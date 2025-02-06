@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentim?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f751ad;
+        }
+
+        header {
+            background-color: #ff30ac;
+            color: white;
+            padding: 20px;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .images img {
+            width: 500px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .images h2 {
+            color: white;
+            margin-top: 10px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            border-color: white;
+            border-style: bold;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: 2px solid white; /* White border */
+            border-radius: 5px;
+        }
+
+        .btn1 {
+            background-color: #d23693;
+            color: white;
+        }
+
+        .btn2 {
+            background-color: #ba0000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Queres ser o meu São Valentim?</h1>
+</header>
+
+<div class="images">
+    <div>
+        <img src="images/Hotel-Covilha-Dona-Maria-Affiliated-By-Melia-Exterior.JPEG" alt="Image 1">
+        <h2>Hotel na Covilhã</h2>
+    </div>
+    <div>
+        <img src="images/32339.png" style="width: 150px; height: 150px; margin-top: 100px;" alt="Image 2">
+    </div>
+    <div>
+        <img src="images/Quiosque-de-sushi-Continente-Distribuição-Hoje.jpg" alt="Image 3">
+        <h2>Sushi do Continent?</h2>
+    </div>
+</div>
+
+<div class="buttons">
+    <button class="btn1" onclick="showAlert()">Shiiimmm</button>
+    <button class="btn2" onclick="showAlert2()">Nhaoo :(</button>
+</div>
+
+<script>
+    function showAlert() {
+        alert("Yupppiiiiiiiiii");
+    }
+
+    function showAlert2() {
+        alert("Escolha inválida");
+    }
+</script>
+</body>
+</html>
