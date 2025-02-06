@@ -61,6 +61,47 @@
             background-color: #ba0000;
             color: white;
         }
+
+        #heart-container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* This will center it both vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+        /* Heart shape CSS */
+        .heart {
+  --c: red;
+  width: 1000px;
+  aspect-ratio: 1;
+  background:
+   radial-gradient(at 70% 31%, var(--c) 29%, #0000 30%),
+   radial-gradient(at 30% 31%, var(--c) 29%, #0000 30%),
+   conic-gradient(from -45deg at 50% 84%, var(--c) 90deg, #0000 0)
+    bottom/100% 50% no-repeat;
+  position: relative; /* Ensure it's positioned to contain the image */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+}
+
+.heart img {
+  width: 500px;  /* Adjust image size to fit within the heart */
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  position: absolute; /* This ensures it stays inside the heart */
+  padding-bottom: 170px;
+}
+
+
+        /* Hide content when the heart is shown */
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -84,18 +125,36 @@
 </div>
 
 <div class="buttons">
-    <button class="btn1" onclick="showAlert()">Shiiimmm</button>
+    <button class="btn1" onclick="showHeartImage()">Shiiimmm</button>
     <button class="btn2" onclick="showAlert2()">Nhaoo :(</button>
 </div>
 
+<div id="heart-container"></div>
+
 <script>
-    function showAlert() {
-        alert("Yupppiiiiiiiiii");
+    function showHeartImage() {
+        // Hide the page content
+        document.querySelector('header').classList.add('hidden');
+        document.querySelector('.images').classList.add('hidden');
+        document.querySelector('.buttons').classList.add('hidden');
+
+        // Create a new heart div and image element
+        var heartContainer = document.getElementById("heart-container");
+        var heartDiv = document.createElement("div");
+        heartDiv.classList.add("heart");
+
+        var img = document.createElement("img");
+        img.src = "images/photo.jpg"; // Add your desired image path here
+        img.alt = "Heart Image";
+
+        heartDiv.appendChild(img);
+        heartContainer.appendChild(heartDiv);
     }
 
     function showAlert2() {
         alert("Escolha inválida");
     }
 </script>
+
 </body>
 </html>
